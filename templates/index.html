@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Car Features Form</title>
+</head>
+
+<body>
+
+    <h1>Car Features Form</h1>
+
+    <form action="#" method="post">
+
+        <label for="make">Make:</label>
+        <select id="make" name="make" required>
+            {% for make in unique_makes %}
+            <option value="{{ make }}">{{ make }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="model">Model:</label>
+        <select id="model" name="model" required>
+            {% for model in unique_models %}
+            <option value="{{ model }}">{{ model }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="year">Year:</label>
+        <select id="year" name="year" required>
+            {% for year in unique_years %}
+            <option value="{{ year }}">{{ year }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="fuel_type">Engine Fuel Type:</label>
+        <select id="fuel_type" name="fuel_type" required>
+            {% for fuel_type in unique_fuel_types %}
+            <option value="{{ fuel_type }}">{{ fuel_type }}</option>
+            {% endfor %}
+        </select>
+
+        <!-- Engine hp -->
+        <label for="engine_hp">Engine HP::</label>
+        <input type="number" id="engine_hp" name="engine_hp" min="0" max="1010">
+
+        
+
+        <label for="engine_cylinders">Engine Cylinders:</label>
+        <select id="engine_cylinders" name="engine_cylinders" required>
+            {% for value in unique_cylinders %}
+            <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="transmission_type">Transmission Type:</label>
+        <select id="transmission_type" name="transmission_type" required>
+            {% for transmission_type in unique_transmission_types %}
+            <option value="{{ transmission_type }}">{{ transmission_type }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="driven_wheels">Driven Wheels:</label>
+        <select id="driven_wheels" name="driven_wheels" required>
+            {% for driven_wheel in unique_driven_wheels %}
+            <option value="{{ driven_wheel }}">{{ driven_wheel }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="num_doors">Number of Doors:</label>
+        <select id="num_doors" name="num_doors" required>
+            {% for value in unique_doors %}
+            <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="vehicle_size">Vehicle Size:</label>
+        <select id="vehicle_size" name="vehicle_size" required>
+            {% for vehicle_size in unique_sizes %}
+            <option value="{{ vehicle_size }}">{{ vehicle_size }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="vehicle_style">Vehicle Style:</label>
+        <select id="vehicle_style" name="vehicle_style" required>
+            {% for vehicle_style in unique_styles %}
+            <option value="{{ vehicle_style }}">{{ vehicle_style }}</option>
+            {% endfor %}
+        </select>
+        <!-- City MPG -->
+        <label for="city_mpg">City MPG:</label>
+        <input type="number" id="city_mpg" name="city_mpg" min="0" max="160">
+
+        <!-- Highway MPG -->
+        <label for="highway_mpg">Highway MPG:</label>
+        <input type="number" id="highway_mpg" name="highway_mpg" min="0" max="370">
+
+        <!-- Popularity -->
+        <label for="popularity">Popularity:</label>
+        <input type="number" id="popularity" name="popularity" min="0" max="5680">
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
